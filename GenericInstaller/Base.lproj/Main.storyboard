@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GenericInstaller" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -688,7 +689,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-			<connections>
+                        <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
@@ -703,11 +704,179 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="GenericInstaller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bt8-dq-tE7">
+                                <rect key="frame" x="101" y="199" width="359" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="WLo-Z9-2hk"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TAK-e3-i2o">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="acU-Ip-mIB">
+                                <rect key="frame" x="18" y="201" width="77" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="LfO-0K-lH7"/>
+                                    <constraint firstAttribute="height" constant="17" id="VY7-4B-YwF"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="パッケージ名" id="iOO-bs-FEg">
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Aa4-mJ-Ujq">
+                                <rect key="frame" x="18" y="169" width="77" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="XAM-kU-FYx"/>
+                                    <constraint firstAttribute="height" constant="17" id="xF0-CM-Ven"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="バージョン" id="jwr-Xg-aCo">
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F7H-08-gxq">
+                                <rect key="frame" x="18" y="230" width="77" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="PWG-S0-M5j"/>
+                                    <constraint firstAttribute="height" constant="17" id="w3H-8s-ewY"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="対象アプリ" id="1zV-oE-X3U">
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LOv-0E-Ap3">
+                                <rect key="frame" x="18" y="139" width="77" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="71J-CX-3bJ"/>
+                                    <constraint firstAttribute="height" constant="17" id="XAj-F9-H4E"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="出力先" id="zwQ-cf-4DC">
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HVo-66-r27">
+                                <rect key="frame" x="95" y="222" width="125" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FgA-yC-FjV"/>
+                                    <constraint firstAttribute="width" constant="113" id="URf-Xh-HNv"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="ファイルを選択" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rtw-My-8kk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onSelectFile:" target="XfG-lQ-9wD" id="tQg-cz-gO6"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h28-QJ-oNS">
+                                <rect key="frame" x="220" y="231" width="242" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="iki-Wu-AAr"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="kh0-fA-3fS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KUD-W8-Pyj">
+                                <rect key="frame" x="101" y="167" width="359" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="GdL-6q-ClO"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="z3u-AX-XRT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-Nx-kjy">
+                                <rect key="frame" x="95" y="131" width="125" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="8FA-Da-etR"/>
+                                    <constraint firstAttribute="height" constant="21" id="rBc-2j-2Hp"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="フォルダを選択" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EBT-wi-soK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onSelectOutputDirectoryDown:" target="XfG-lQ-9wD" id="Qfk-Be-fB0"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4yV-Lj-WCT">
+                                <rect key="frame" x="222" y="140" width="240" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="DXF-aP-m0t"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="OA4-5C-VGL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-Fr-58A">
+                                <rect key="frame" x="14" y="13" width="452" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="sAp-m5-fwR"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="出力" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AEd-R5-Oyt">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="F7H-08-gxq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="2Q7-x7-c9Q"/>
+                            <constraint firstItem="1dB-Nx-kjy" firstAttribute="top" secondItem="KUD-W8-Pyj" secondAttribute="bottom" constant="8" id="3oh-xa-0yw"/>
+                            <constraint firstItem="Bt8-dq-tE7" firstAttribute="leading" secondItem="acU-Ip-mIB" secondAttribute="trailing" constant="8" id="4gN-eM-sgn"/>
+                            <constraint firstItem="HVo-66-r27" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="5HZ-Vh-iPF"/>
+                            <constraint firstAttribute="bottom" secondItem="ZJM-Fr-58A" secondAttribute="bottom" constant="20" id="5fI-oR-YrB"/>
+                            <constraint firstItem="Aa4-mJ-Ujq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="89m-cp-bKA"/>
+                            <constraint firstItem="F7H-08-gxq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="23" id="Anf-Ce-gTU"/>
+                            <constraint firstAttribute="trailing" secondItem="Bt8-dq-tE7" secondAttribute="trailing" constant="20" id="Byy-WW-zEC"/>
+                            <constraint firstItem="HVo-66-r27" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Cd0-IC-h27"/>
+                            <constraint firstItem="4yV-Lj-WCT" firstAttribute="leading" secondItem="1dB-Nx-kjy" secondAttribute="trailing" constant="10" id="Knc-32-qNq"/>
+                            <constraint firstAttribute="trailing" secondItem="KUD-W8-Pyj" secondAttribute="trailing" constant="20" id="L0k-h3-o8c"/>
+                            <constraint firstItem="KUD-W8-Pyj" firstAttribute="top" secondItem="Bt8-dq-tE7" secondAttribute="bottom" constant="10" id="Out-Ve-fiJ"/>
+                            <constraint firstItem="HVo-66-r27" firstAttribute="leading" secondItem="F7H-08-gxq" secondAttribute="trailing" constant="8" id="RCX-8b-VM8"/>
+                            <constraint firstItem="acU-Ip-mIB" firstAttribute="top" secondItem="F7H-08-gxq" secondAttribute="bottom" constant="12" id="TeZ-HH-wDb"/>
+                            <constraint firstAttribute="trailing" secondItem="4yV-Lj-WCT" secondAttribute="trailing" constant="20" id="Tqg-ON-BiJ"/>
+                            <constraint firstItem="Aa4-mJ-Ujq" firstAttribute="top" secondItem="acU-Ip-mIB" secondAttribute="bottom" constant="15" id="WNN-N0-qh3"/>
+                            <constraint firstAttribute="trailing" secondItem="ZJM-Fr-58A" secondAttribute="trailing" constant="20" id="XE2-Py-fQs"/>
+                            <constraint firstItem="4yV-Lj-WCT" firstAttribute="top" secondItem="KUD-W8-Pyj" secondAttribute="bottom" constant="10" id="Yve-Wv-dOD"/>
+                            <constraint firstItem="h28-QJ-oNS" firstAttribute="leading" secondItem="HVo-66-r27" secondAttribute="trailing" constant="8" id="bNe-pz-D5H"/>
+                            <constraint firstItem="Bt8-dq-tE7" firstAttribute="top" secondItem="HVo-66-r27" secondAttribute="bottom" constant="8" id="cHc-5H-cdc"/>
+                            <constraint firstItem="1dB-Nx-kjy" firstAttribute="leading" secondItem="LOv-0E-Ap3" secondAttribute="trailing" constant="8" id="eXj-Sl-S71"/>
+                            <constraint firstItem="acU-Ip-mIB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="gwZ-e0-zuw"/>
+                            <constraint firstItem="LOv-0E-Ap3" firstAttribute="top" secondItem="Aa4-mJ-Ujq" secondAttribute="bottom" constant="13" id="imG-Wi-0T1"/>
+                            <constraint firstItem="ZJM-Fr-58A" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kO0-gl-MEs"/>
+                            <constraint firstAttribute="trailing" secondItem="h28-QJ-oNS" secondAttribute="trailing" constant="20" id="kTK-Hp-5HM"/>
+                            <constraint firstItem="LOv-0E-Ap3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kz6-tu-cBd"/>
+                            <constraint firstItem="h28-QJ-oNS" firstAttribute="leading" secondItem="HVo-66-r27" secondAttribute="trailing" constant="8" id="lfd-c9-o3V"/>
+                            <constraint firstItem="h28-QJ-oNS" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="22" id="t3P-Uh-ILn"/>
+                            <constraint firstItem="HVo-66-r27" firstAttribute="leading" secondItem="F7H-08-gxq" secondAttribute="trailing" constant="8" id="vNZ-By-P4P"/>
+                            <constraint firstItem="KUD-W8-Pyj" firstAttribute="leading" secondItem="Aa4-mJ-Ujq" secondAttribute="trailing" constant="8" id="y5R-17-FLp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputUrl" destination="4yV-Lj-WCT" id="kwu-Xl-F2V"/>
+                        <outlet property="targetUrl" destination="h28-QJ-oNS" id="PeC-l7-SCY"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
