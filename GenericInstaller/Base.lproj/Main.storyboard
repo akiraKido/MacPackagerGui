@@ -837,6 +837,9 @@
                                 <buttonCell key="cell" type="push" title="出力" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AEd-R5-Oyt">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <connections>
+                                        <action selector="onPackageOutputDown:" target="XfG-lQ-9wD" id="PRJ-WN-sx4"/>
+                                    </connections>
                                 </buttonCell>
                             </button>
                         </subviews>

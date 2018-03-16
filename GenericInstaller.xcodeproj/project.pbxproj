@@ -13,6 +13,7 @@
 		CE4922BF205AD77500498463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4922BD205AD77500498463 /* Main.storyboard */; };
 		CE4922CB205AD77500498463 /* GenericInstallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922CA205AD77500498463 /* GenericInstallerTests.swift */; };
 		CE4922D6205AD77500498463 /* GenericInstallerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922D5205AD77500498463 /* GenericInstallerUITests.swift */; };
+		CE4922E6205C1E3F00498463 /* test.sh in Resources */ = {isa = PBXBuildFile; fileRef = CE4922E5205C1CA700498463 /* test.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CE4922D1205AD77500498463 /* GenericInstallerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenericInstallerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4922D5205AD77500498463 /* GenericInstallerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericInstallerUITests.swift; sourceTree = "<group>"; };
 		CE4922D7205AD77500498463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4922E5205C1CA700498463 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				CE4922BD205AD77500498463 /* Main.storyboard */,
 				CE4922C0205AD77500498463 /* Info.plist */,
 				CE4922C1205AD77500498463 /* GenericInstaller.entitlements */,
+				CE4922E5205C1CA700498463 /* test.sh */,
 			);
 			path = GenericInstaller;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4922E6205C1E3F00498463 /* test.sh in Resources */,
 				CE4922BC205AD77500498463 /* Assets.xcassets in Resources */,
 				CE4922BF205AD77500498463 /* Main.storyboard in Resources */,
 			);

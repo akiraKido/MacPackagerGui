@@ -41,6 +41,51 @@ class ViewController: NSViewController {
         })
     }
     
+    @IBAction func onPackageOutputDown(_ sender: NSButtonCell) {
+        let tempDir = NSTemporaryDirectory()
+        
+        let scriptPathOptional = Bundle.main.path(forResource: "test", ofType: "sh")
+        guard let scriptPath = scriptPathOptional else {
+            print("scriptPath not found")
+            return
+        }
+        
+        runScript(scriptPath: scriptPath, args: nil)
+    }
+    
+    private func runScript(scriptPath: String,
+                           args: [String]?) -> Bool {
+        let allArgs = args?.joined(separator: " ")
+        var fullScript: String
+        if let allArgs = allArgs {
+            fullScript = "\(scriptPath) \(allArgs)"
+        } else {
+            fullScript = scriptPath
+        }
+        let script = "do shell script \"\(fullScript)\" with administrator privileges"
+        
+        let appleScript = NSAppleScript(source: script)
+        appleScript?.executeAndReturnError(nil)
+        
+        return true
+    }
+    
+    private func shell(_ args: String ...) {
+        let task = Process()
+        task.launchPath = "/usr/bin/env"
+        task.arguments = args
+        task.launch()
+        task.waitUntilExit()
+    }
+    
+    private func shell(_ args: [String]) {
+        let task = Process()
+        task.launchPath = "/usr/bin/env"
+        task.arguments = args
+        task.launch()
+        task.waitUntilExit()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
